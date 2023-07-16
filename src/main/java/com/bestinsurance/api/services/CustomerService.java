@@ -21,7 +21,7 @@ public class CustomerService implements CrudService<Customer>{
     }
 
     @Override
-    public Customer create(Customer customer) {
+    public Customer create(final Customer customer) {
         return customerRepository.save(customer);
     }
 
@@ -31,17 +31,23 @@ public class CustomerService implements CrudService<Customer>{
     }
 
     @Override
-    public Optional<Customer> getByID(UUID uuid) {
+    public Optional<Customer> getByID(final UUID uuid) {
         return customerRepository.findById(uuid);
     }
 
     @Override
-    public Customer update(Customer domainObj) {
-        return null;
+    public Customer update(final UUID id, final Customer customer) {
+        final Customer existingCustomer = customerRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException(String.format(
+                        "Customer not found for id %s", id)));
+        customer.setCustomerId(existingCustomer.getCustomerId());
+        customer.setName(existingCustomer.getName());
+        customer.setSurName(existingCustomer.getSurName());
+        return customerRepository.save(customer);
     }
 
     @Override
-    public void delete(String UUID) {
+    public void delete(final UUID UUID) {
 
     }
 }

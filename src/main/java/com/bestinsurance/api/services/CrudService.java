@@ -6,9 +6,9 @@ import java.util.UUID;
 
 public interface CrudService<T> {
 
-    T create(T domainObj);
+    T create(final T domainObj);
     List<T> findAll();
-    Optional<T> getByID(UUID UUID);
-    T update(T domainObj);
-    void delete(String UUID);
+    Optional<T> getByID(final UUID UUID);
+    T update(final UUID id, final T domainObj);
+    void delete(final UUID uuid);
 }
