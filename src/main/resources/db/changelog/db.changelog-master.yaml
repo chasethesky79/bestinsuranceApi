@@ -11,7 +11,7 @@ databaseChangeLog:
             usePreparedStatements: false
             separator: ','
             relativeToChangelogFile: true
-            file: changelog/countries_data.csv
+            file: countries_data.csv
             encoding: UTF-8
             quotchar: '"'
         - loadData:
@@ -19,7 +19,7 @@ databaseChangeLog:
             usePreparedStatements: false
             separator: ','
             relativeToChangelogFile: true
-            file: changelog/states_data.csv
+            file: states_data.csv
             encoding: UTF-8
             quotchar: '"'
         - loadData:
@@ -27,6 +27,6 @@ databaseChangeLog:
             usePreparedStatements: false
             separator: ','
             relativeToChangelogFile: true
-            file: changelog/cities_data.csv
+            file: cities_data.csv
             encoding: UTF-8
             quotchar: '"'

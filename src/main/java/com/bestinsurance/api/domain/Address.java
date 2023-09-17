@@ -26,4 +26,12 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "country_id", nullable = false, insertable = true)
     private Country country;
+
+    @ManyToOne
+    @JoinColumn(name = "city_id", nullable = false, insertable = true)
+    private City city;
+
+    @ManyToOne
+    @JoinColumn(name = "state_id", insertable = true)
+    private State state;
 }

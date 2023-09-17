@@ -48,7 +48,7 @@ public class CustomerService implements CrudService<Customer>{
                         "Customer not found for id %s", id)));
         customer.setCustomerId(existingCustomer.getCustomerId());
         customer.setName(existingCustomer.getName());
-        customer.setSurName(existingCustomer.getSurName());
+        customer.setSurname(existingCustomer.getSurname());
         return customerRepository.save(customer);
     }
 
